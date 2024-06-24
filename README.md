@@ -5,7 +5,6 @@
 ## Features
 
 * Audio latency reduction on the default playback device
-* Automatic updates
 
 ## Requirements
 
@@ -43,6 +42,6 @@ Since the application reduces audio sample buffer size, the buffer runs out fast
 ### Changes from upstream
 
 - auto-updating removed
-- now runs either foreground or as a background application
-- switch from msvc to mingw
-- github builds now executable for us
+- now runs either as hidden background app (real.exe) or console application (real-console.exe)
+- switched from msvc to mingw
+- github now build executables for us
