@@ -1,7 +1,7 @@
 ARCH=x86_64-w64-mingw32
 CXX=$(ARCH)-g++
 WINDRES=$(ARCH)-windres
-CXXFLAGS=-Ideps/expected/include -std=c++17 -municode
+CXXFLAGS=-Ideps/expected/include -std=c++17 -municode -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
 LDFLAGS=-lole32 -s -municode
 
 SOURCES=src/main.cpp src/MinimumLatencyAudioClient.cpp src/WindowsError.cpp res/real-app.res
