@@ -3,9 +3,9 @@ CXX=$(ARCH)-g++
 WINDRES=$(ARCH)-windres
 CXXFLAGS=-Ideps/expected/include -std=c++17 -municode -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
 ifdef GITHUB_SHA
-CXXFLAGS+=-DGITHUB_SHA=\"$(GITHUB_SHA)\" -DGITHUB_REF=\"$(GITHUB_REF)\"
+CXXFLAGS+=-DGITHUB_SHA=\"$(GITHUB_SHA)\" -DGITHUB_REF_NAME=\"$(GITHUB_REF_NAME)\"
 else
-CXXFLAGS+=-DGITHUB_SHA=\"unknown\" -DGITHUB_REF=\"unknown\"
+CXXFLAGS+=-DGITHUB_SHA=\"unknown\" -DGITHUB_REF_NAME=\"unknown\"
 endif
 
 LDFLAGS=-lole32 -s -municode -static
