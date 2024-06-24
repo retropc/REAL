@@ -6,12 +6,10 @@
 
 * Audio latency reduction on the default playback device
 * Automatic updates
-* Starting minimised
 
 ## Requirements
 
-* Windows 10 64-bit
-* [Microsoft Visual C++ 2017 Redistributable (x64)](https://aka.ms/vs/15/release/VC_redist.x64.exe) 
+* mingw 64-bit
 
 ## Setup
 
@@ -33,24 +31,7 @@
 
 ## Building
 
-1. Make sure **Microsoft Visual Studio 2017** is installed and updated.
-2. Install [CMake 3.12](https://cmake.org/download/) or later and configure your `PATH` environment variable to find `cmake` if necessary.
-3. Clone the repository:
-    ```bat
-    git clone https://github.com/miniant-git/REAL.git miniant-real
-    cd miniant-real
-    ```
-4. Configure Visual Studio project with CMake:
-   ```bat
-   cd real-app
-   ./run-cmake.bat
-   ```
-5. Open the generated solution:
-   ```bat
-   start build/miniant-real.sln
-   ```
-6. Right-click on the `real-app` project in the **Solution Explorer** and select **Build**.
-   * The resulting executable will be placed inside `real-app/build/Debug/` folder.
+1. run make
 
 ## FAQ
 
@@ -61,3 +42,10 @@ As described in Mirosoft's [Low Latency Audio FAQ section](https://docs.microsof
 ### What are the downsides?
 
 Since the application reduces audio sample buffer size, the buffer runs out faster and needs to be refilled more frequently. This increases the odds of audible audio cracks appearing when the CPU is busy and unable to keep up. 
+
+### Changes from upstream
+
+- auto-updating removed
+- now runs either foreground or as a background application
+- switch from msvc to mingw
+- github builds now executable for us
