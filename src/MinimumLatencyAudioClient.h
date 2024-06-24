@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "WindowsError.h"
 
 #include <tl/expected.hpp>
