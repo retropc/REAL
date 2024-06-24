@@ -66,8 +66,10 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 #ifdef CONSOLE
     DisplayExitMessage(success);
 #else
-    for (;;) {
-        Sleep(86400);
+    if (success) {
+        for (;;) {
+            Sleep(86400);
+        }
     }
 #endif
     return 0;
