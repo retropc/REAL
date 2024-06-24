@@ -8,7 +8,7 @@ else
 CXXFLAGS+=-DGITHUB_SHA=\"unknown\" -DGITHUB_REF=\"unknown\"
 endif
 
-LDFLAGS=-lole32 -s -municode
+LDFLAGS=-lole32 -s -municode -static
 
 SOURCES=src/main.cpp src/MinimumLatencyAudioClient.cpp src/WindowsError.cpp res/real-app.res
 .PHONY: clean default
