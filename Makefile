@@ -2,6 +2,12 @@ ARCH=x86_64-w64-mingw32
 CXX=$(ARCH)-g++
 WINDRES=$(ARCH)-windres
 CXXFLAGS=-Ideps/expected/include -std=c++17 -municode -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+ifdef GITHUB_SHA
+CXXFLAGS+=-DGITHUB_SHA=\"$(GITHUB_SHA)\" -DGITHUB_REF=\"$(GITHUB_REF)\"
+else
+CXXFLAGS+=-DGITHUB_SHA=\"unknown\" -DGITHUB_REF=\"unknown\"
+endif
+
 LDFLAGS=-lole32 -s -municode
 
 SOURCES=src/main.cpp src/MinimumLatencyAudioClient.cpp src/WindowsError.cpp res/real-app.res

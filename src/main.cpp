@@ -9,7 +9,7 @@
 #include <sstream>
 #include <memory>
 
-#define APP_VERSION "0.2.0"
+#define APP_VERSION (GITHUB_REF " (" GITHUB_SHA ")")
 
 using namespace miniant::Windows;
 using namespace miniant::Windows::WasapiLatency;
